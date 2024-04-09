@@ -1,0 +1,48 @@
+<div class="m-2">
+  <h1 class="subti">Listado</h1>
+  <div class="borde-card">
+    <ul *ngIf="characterList.length>0; else mensaje"
+    class="grid gap-2">
+      <li class="hover:animate-shake"
+          *ngFor="let character of characterList;
+          let i =index;
+          let isEven = even;
+          let isOdd = odd;
+          "
+
+          >
+          <div class="flex item-center ">
+                  <span class="text-white rounded-full w-6 h-6 mx-2 flex justify-center items-center"
+                  [ngClass]="{
+                      'bg-teal-400 ':isEven,
+                      'bg-teal-800 ':isOdd
+
+                  }">
+                  {{ i+1 }}</span>
+
+              <div class=" bg-teal-200 rounded-full px-2 w-full">
+                  <span>{{ character.name }} - </span>
+                  <strong>Power: </strong>
+                  <span>{{ character.power }}</span>
+              </div>
+
+              <div class="bg-red-500 rounded w-10 h-6 flex items-center justify-center hover:bg-red-600 transition-all mx-2">
+                  <div class="font-extrabold text-slate-300 border-pink-800 hover:text-white">
+                      <button (click)="oneDeleteCharacter(character.id)">X
+                      </button>
+                  </div>
+
+              </div>
+          </div>
+
+      </li>
+
+    </ul>
+
+    <ng-template #mensaje>
+        <div  class="bg-red-200 flex justify-center rounded">
+            <h1 class="font-bold"> Lista vacia</h1>
+        </div>
+    </ng-template>
+  </div>
+</div>

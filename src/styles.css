@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .card{
+    @apply bg-red-300 w-40 h-40 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl;
+  }
+  .but{
+    @apply border-teal-500 border-[2px] rounded-md px-2 w-[100%] bg-sky-200 hover:bg-teal-500 hover:font-semibold;
+  }
+  .tit{
+    @apply flex justify-center items-center bg-teal-500 p-3 mb-1 text-white font-semibold
+  }
+  .subti{
+    @apply font-semibold pl-3 text-[25px]
+  }
+  .in-put{
+    @apply w-[100%] p-1 focus:border-teal-500 focus:outline-none border-slate-200 border-[2px] rounded-[15px]
+  }
+  .borde-card{
+    @apply border-gray-400 border-[1px] rounded p-4 w-[100%]
+  }
+}
